@@ -3,7 +3,7 @@
 #pragma once
 
 #include <ostream>
-
+#include <vector>
 using namespace std;
 
 

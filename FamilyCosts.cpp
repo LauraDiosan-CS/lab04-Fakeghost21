@@ -212,8 +212,6 @@ bool Costs::operator==(const Costs& c)
 
 }
 
-
-
 ostream& operator<<(ostream& os, const Costs& c)
 
 {

@@ -27,13 +27,13 @@ Costs* Repo::show()
 {
 	return this->cost;
 }
-void Repo::del(int id)
+void Repo::del(Costs c)
 {
-	int day, sum, pos, nr;
+	int sum, pos, nr;
 	char* type = new char[10];
 	nr = this->getSize();
 	for (int i = 0; i < nr; i++)
-		if (this->show()[i].getId() == id)
+		if (this->show()[i] == c)
 		{
 			pos = i;
 			break;
@@ -52,4 +52,20 @@ void Repo::update(int id, Costs c2)
 			this->show()[i] = c2;
 			break;
 		}
+}
+
+void Repo::updateCosts(const vector<vector<Costs>>& v)
+{	
+	if (v.size() > 1)
+	{
+		int nr = v[v.size() - 2].size();
+		if (nr > this->n)
+		{
+			for (int i = 0; i < nr; i++)
+				this->show()[i] = v[v.size() - 2][i];
+			this->n = nr;
+		}
+		else this->n = nr;
+	}
+	else this->n = 0;
 }

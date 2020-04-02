@@ -1,6 +1,7 @@
 #pragma once
 #include "FamilyCosts.h"
 #include "Service.h"
+#include <vector>
 
 class UI {
 private:
@@ -12,9 +13,11 @@ public:
 	~UI();
 	void showConsole();
 	void menu();
-	void add();
-	void del();
+	void add(string cmd);
+	void del(string cmd);
 	void update();
-	void show();
-
+	void show(string cmd);
+	void sumaTip(string cmd);
+	void filtrare(string cmd);
+	void save(const vector<Costs>&);
 };

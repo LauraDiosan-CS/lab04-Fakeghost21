@@ -1,6 +1,6 @@
 #pragma once
 #include "FamilyCosts.h"
-
+#include <vector>
 class Repo
 {
 private:
@@ -10,8 +10,9 @@ public:
 	Repo();
 	~Repo();
 	void add(Costs c);
-	void del(int id);
+	void del(Costs c);
 	void update(int c1, Costs c2);
 	Costs* show();
 	int getSize();
+	void updateCosts(const vector<vector<Costs>>&);
 };
